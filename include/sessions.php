@@ -68,7 +68,7 @@
 			return false;
 		}
 
-		if (sha1($_SERVER['HTTP_USER_AGENT']) != $_SESSION["user_agent"]) {
+		if (SESSION_CHECK_USERAGENT && sha1($_SERVER['HTTP_USER_AGENT']) != $_SESSION["user_agent"]) {
 			$_SESSION["login_error_msg"] =
 				__("Session failed to validate (user agent changed)");
 			return false;
